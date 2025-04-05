@@ -1,0 +1,17 @@
+{
+    "data": {
+        "name": "useState",
+        "notes": [
+            "useState shouldn't be used for complex objects and nested elements as it will become complex to manage", 
+            "If there is a prop which needs to be used as a useState, then to detect the change in the parent it will not directly reflecct but you may have to"
+        ],
+        "codeGuide": [
+            {
+                "content": "Updating the state via passing the props",
+                "images": [
+                    "/images/hooks/useState/1.png"
+                ]
+            }
+        ]
+    }
+}

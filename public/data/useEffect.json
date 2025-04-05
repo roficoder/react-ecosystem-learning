@@ -1,0 +1,22 @@
+{
+    "data": {
+        "name": "useEffect",
+        "notes": [
+            "useEffect() is a hook that allows you to perform side effects in your functional components", 
+            "Side effects include things like:",
+            "1. Fetching data from an API",
+            "2. Updating the DOM.",
+            "3. Subscribing to events.",
+            "4. Cleaning up resources when the component unmounts.",
+            "If there is a prop which needs to be used as a useState, then to detect the change in the parent it will not directly reflecct but you may have to"
+        ],
+        "codeGuide": [
+            {
+                "content": "Pro Tips",
+                "images": [
+                    "/images/hooks/useEffect/1.png"
+                ]
+            }
+        ]
+    }
+}
