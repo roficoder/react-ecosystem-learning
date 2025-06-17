@@ -5,6 +5,9 @@ import { PATHSNAME } from "../../enums/pathNames";
 import { DATA_ARR } from "../../assets/data";
 
 const Home: FC = () => {
+
+
+    
     return (
         <>
             {
@@ -13,7 +16,7 @@ const Home: FC = () => {
                         <>
                             <ConceptDiv>
                                 <h1>{path}</h1>
-                                <Link to={'/' + path}> <CommonButton>Go to Details</CommonButton></Link>
+                                <Link to={'/' + path}><CommonButton>Go to Details</CommonButton></Link>
                             </ConceptDiv>
                         </>
                     )

@@ -1,0 +1,25 @@
+{
+    "data": {
+        "name": "useContext",
+        "notes": [
+            "useContext is used to pass data directly from parent components(or even from child component) to deeply nested child component without passing it through multiple child components,it prevents props drilling.",
+            "Normally when we are interacting with state , when we have to pass state from parent component to deeply nested child component, let say I have 4 components, and I have to pass some specific data from component 1 to component 4, then traditionally I use props, the props is passed from Component 1 to Component 2, then from Component 3, it reaches component 4,where I'll utilize it,but wait? why I have passed the prop through component 2 and component 3, even they are not using it?(it does not make any effect when I am dealing with less amount of components 5 to 10 but as my application grows, this will creates a lot of confusion and also increases the repetition in my code, this problem is called Props Drilling.",
+            "To avoid props drilling, we use useContext Hooks, they are beneficial because they give us freedom to play with our data freely, meaning we pass the data from a component to any of our desired components.",
+        
+        "Steps",
+            "1.We Simply define data (createContext) in a component from where we have to pass it. const Data=createContext()",
+            "2.useContext provides , provider key is used to pass data across components which are wrapped,(I'll explain later)",
+            "3.The variable in which we have defined the data is passed as value in the provider,the data which we have passed to provider can be accessed anywhere in the code,",
+            "4.The Component where we need this data, in our case let say it is component two, we would define import useContext, stores its data into a separate variable just like const user=useContext(Data)"
+        ],
+        "codeGuide": [
+            {
+                "content": "Pro Tips",
+                "images": [
+                    "/public/images/hooks/useContext/3.png"
+                    
+                ]
+            }
+        ]
+    }
+}

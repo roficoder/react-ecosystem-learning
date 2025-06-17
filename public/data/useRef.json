@@ -1,0 +1,23 @@
+{
+    "data": {
+        "name": "useRef",
+        "notes": [
+            "It is used to count how many times a page is re-rendered ,page is re-renderes when a state is updated, the question comes, why we can't measure the re-rendering using useState? The Answer is simple: useState also cause itself, rendering when state updates, in this way, it causes infinite loop",
+            "useRef is used to Access the DOM Elements directly without interacting with Virtual DOM",
+            "To keep history of previous value of state after updation",
+            "To check how many times a page is re-rendered during state Change"
+        ],
+        "codeGuide": [
+            {
+                "content": "Updating the state via passing the props",
+                "images": [
+                    "/public/images/hooks/useRef/1.png",
+                    "/public/images/hooks/useRef/2.png",
+                    "/public/images/hooks/useRef/3.png",
+                    "/public/images/hooks/useRef/4.png"
+                ]
+               
+            }
+        ]
+    }
+}

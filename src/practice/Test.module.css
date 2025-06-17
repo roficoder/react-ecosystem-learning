@@ -1,0 +1,11 @@
+.textareaCss {
+    width: 100%;
+    height: 200px;
+    border: thin solid seagreen;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.btn {
+    background-color: orange;
+}
