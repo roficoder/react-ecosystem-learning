@@ -1,13 +1,21 @@
 import { forwardRef, useContext, useImperativeHandle, useRef } from "react";
 import LanguageContext from "../context/language";
 
+// MyInputHandle.ts
+export interface MyInputHandle {
+    focus: () => void;
+    clear: () => void;
+}
+
 const UserList = forwardRef(({ users, ref }: any) => {
     const langContext = useContext(LanguageContext);
-    const internalRef = useRef(null);
+    const internalRef = useRef<MyInputHandle>(null);
 
     useImperativeHandle(ref, () => ({
-        focus: () => internalRef?.current?.focus(),
-        clear: () => internalRef?.current?.clear()
+        focus: () => internalRef.current?.focus(),
+        clear: () => {
+            if (internalRef.current) internalRef.current.value = '';
+        },
     }))
 
     return (
