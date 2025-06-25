@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { App } from './App.tsx'
 import { ErrorBoundary } from 'react-error-boundary'
+import { Provider } from 'react-redux'
+import store from './store/store.ts'
 
 const ErrorBoundaryFallback = ({ error, resetErrorBoundary }: any) => {
   return (
@@ -18,7 +20,9 @@ const ErrorBoundaryFallback = ({ error, resetErrorBoundary }: any) => {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary FallbackComponent={ErrorBoundaryFallback}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </ErrorBoundary>
   </StrictMode>
 )

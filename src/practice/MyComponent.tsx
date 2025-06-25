@@ -7,6 +7,9 @@ import UserList from "../components/Userlist";
 import withLogger from "../hoc/withLogger";
 import LanguageContext from "../context/language";
 import ServiceErrorBoundary from "../error-boundary/service-error-boundary";
+import { useDispatch } from "react-redux";
+import { addUser, Profession, UserState } from "../store/user.slice";
+import { useNavigate } from "react-router-dom";
 
 const MyComponent: FC<{ name: string }> = ({ name }) => {
 
@@ -14,7 +17,8 @@ const MyComponent: FC<{ name: string }> = ({ name }) => {
     //     throw new Error("This is an intentional test error!");
     // }
     const [error, setError] = useState(true);
-
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [users, setUsers] = useState<any>([]);
     const [loading, setLoading] = useState(true);
@@ -56,6 +60,32 @@ const MyComponent: FC<{ name: string }> = ({ name }) => {
             <h1>{translations.greeting}</h1>
             <h1>{language}</h1>
             <input type="text" placeholder="Enter you name ..." />
+
+            <form action={
+                (formData) => {
+                    const obj: UserState = {
+                        name: (formData.get('name') ?? '') as string,
+                        username: (formData.get('username') ?? '') as string,
+                        age: (formData.get('age') ?? 0) as number,
+                        position: (formData.get('profession') ?? '') as Profession,
+                    }   
+                    console.log(obj)
+                    dispatch(addUser(obj));
+                    navigate('/cone');
+                    
+                }
+            }>
+                <input type="text" placeholder="Name" name="name" /><br />
+                <input type="text" placeholder="Username" name="username" /><br />
+                <input type="text" placeholder="Age" name="age" /><br />
+                <select name="profession" id="">
+                    <option value="teacher" hidden>Select Profession</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                    <option value="supervisor">Supervisor</option>
+                </select><br />
+                <button>Add User</button>
+            </form>
 
         </>
     );
